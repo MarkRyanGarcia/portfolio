@@ -1,23 +1,79 @@
+import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { GiHamburgerMenu } from "react-icons/gi"
+
+type navBarLink = {
+    label: string
+    route: string
+}
 
 export default function Navbar() {
+    const [open, setOpen] = useState(false)
+    const hoverStyle = "hover:text-tertiary transition-colors duration-300 ease-in-out"
+    const handleNavMobile = () => setOpen(false)
+
+    const navItems: navBarLink[] = [
+        {
+            label: "home",
+            route: "/"
+        },
+        {
+            label: "about",
+            route: "/about"
+        },
+        {
+            label: "projects",
+            route: "/projects"
+        },
+        {
+            label: "resume",
+            route: "/resume"
+        },
+        {
+            label: "contact",
+            route: "/contact"
+        },
+    ]
+
     return (
-        <nav className="flex max-w-3xl mx-auto space-x-12 py-6 text-secondary text-lg">
-            <NavLink to="/" className="hover:text-primary">
-                home
-            </NavLink>
-            <NavLink to="/about" className="hover:text-primary">
-                about
-            </NavLink>
-            <NavLink to="/projects" className="hover:text-primary">
-                projects
-            </NavLink>
-            <NavLink to="/resume" className="hover:text-primary">
-                resume
-            </NavLink>
-            <NavLink to="/contact" className="hover:text-primary">
-                contact
-            </NavLink>
+        <nav className="sticky top-0 w-full z-50 text-primary">
+            <div className="relative">
+                <div
+                    className=" absolute inset-0 bg-base md:bg-transparent md:backdrop-blur-md md:mask-[linear-gradient(to_bottom,black,black_60%,transparent)]"
+                />
+
+                <div className="relative">
+                    <div className="flex justify-between h-12 md:h-5 md:space-x-12 md:max-w-3xl mx-auto py-3 md:py-9 text-lg">
+
+                        <div className="hidden md:flex space-x-12 md:-my-3.5">
+                            {navItems?.map((item) => (
+                                <NavLink to={item.route} className={hoverStyle}>{item.label}</NavLink>
+                            ))}
+                        </div>
+
+                        <NavLink to="/" className="md:hidden mx-4 font-bold">
+                            Mark Garcia
+                        </NavLink>
+
+                        <button
+                            className="md:hidden mx-4"
+                            onClick={() => setOpen(!open)}
+                            aria-label="Toggle menu"
+                        >
+                            <GiHamburgerMenu size={25} />
+                        </button>
+                    </div>
+
+                    {/* Mobile dropdown thing */}
+                    {open && (
+                        <div className="md:hidden flex flex-col items-center space-y-4 pb-4 text-lg">
+                            {navItems?.map((item) => (
+                                <NavLink to={item.route} className={hoverStyle} onClick={handleNavMobile}>{item.label}</NavLink>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
         </nav>
     )
 }
