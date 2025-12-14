@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+    font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background: #1D1E2D;
+    min-height: 100vh;
+    /* overflow: hidden; */
+}
+
+html, body, #root {
+    /* font-family: 'Rubik', sans-serif; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@theme {
+    --font-display: "Satoshi", "sans-serif";
+    --color-primary: #CDD6F4;
+    --color-secondary: #A6ADC8;
+    --color-tertiary: #91DCE5;
+  }
+  
