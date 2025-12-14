@@ -6,8 +6,8 @@ export default function Home() {
     const linkStyle = 'text-tertiary underline font-bold hover:text-base hover:no-underline hover:bg-tertiary transition duration-300 ease-in-out'
 
     return (
-        <div className="w-full p-5 md:py-15">
-            <div className="space-y-5 md:space-y-0">
+        <div className="w-full m-5 md:py-15 md:mx-0">
+            <div className="space-y-7 md:-space-y-5">
                 <div className="flex flex-col md:flex-row space-y-3 md:space-y-0">
                     <div className="flex flex-col md:w-[55%] space-y-5">
                         <h1 className="text-primary text-3xl font-bold">
@@ -20,7 +20,7 @@ export default function Home() {
                                 Computing Machinery (ACM)</a>.
                         </p>
                     </div>
-                    <div className="flex w-[45%] justify-center mx-auto">
+                    <div className="flex md:w-[45%] justify-center mx-auto">
                         <img src="/mark/mark.png" className="w-50 rounded-full border-4 border-secondary hover:border-tertiary transition-colors duration-200 ease-in-out" />
                     </div>
                 </div>
