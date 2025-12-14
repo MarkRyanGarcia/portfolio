@@ -3,7 +3,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
 
 export default function Home() {
-    const linkStyle = 'text-tertiary underline font-bold'
+    const linkStyle = 'text-tertiary underline font-bold hover:text-base hover:no-underline hover:bg-tertiary transition-colors duration-200 ease-in-out'
 
     return (
         <div className="w-full py-15">
@@ -24,16 +24,15 @@ export default function Home() {
                 </div>
             </div>
             <nav className="flex space-x-5 text-secondary">
-
-                <a className="flex" href="https://linkedin.com/in/markryangarcia/" target="_blank">
+                <a className="flex hover:text-primary" href="https://linkedin.com/in/markryangarcia/" target="_blank">
                     <CiLinkedin className="mr-2" size={22} /> LinkedIn
                 </a>
                 <p>|</p>
-                <a className="flex" href="https://github.com/MarkRyanGarcia" target="_blank">
+                <a className="flex hover:text-primary" href="https://github.com/MarkRyanGarcia" target="_blank">
                     <FiGithub className="translate-y-1 mr-2" /> Github
                 </a>
                 <p>|</p>
-                <NavLink to="/about">
+                <NavLink to="/about" className="hover:text-primary">
                     {"More about me ->"}
                 </NavLink>
             </nav>
