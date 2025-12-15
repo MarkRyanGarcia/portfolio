@@ -46,8 +46,8 @@ export default function Navbar() {
                     <div className="flex justify-between h-12 md:h-5 md:space-x-12 md:max-w-3xl mx-auto py-3 md:py-9 text-lg">
 
                         <div className="hidden md:flex space-x-12 md:-my-3.5">
-                            {navItems?.map((item) => (
-                                <NavLink to={item.route} className={hoverStyle}>{item.label}</NavLink>
+                            {navItems?.map((item, idx) => (
+                                <NavLink key={`nav-${idx}`} to={item.route} className={hoverStyle}>{item.label}</NavLink>
                             ))}
                         </div>
 
