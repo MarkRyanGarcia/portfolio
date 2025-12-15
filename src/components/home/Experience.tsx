@@ -8,7 +8,6 @@ import { parseExperience } from "../utils";
 export default function Experience() {
     const linkStyle = 'text-tertiary underline font-bold hover:text-base hover:no-underline hover:bg-tertiary transition duration-300 ease-in-out'
 
-
     const [expItems, setExpItems] = useState<ExperienceItem[]>()
 
     const { data, error, isLoading, isError, isSuccess } = useQuery({
@@ -47,7 +46,7 @@ export default function Experience() {
                 </NavLink>
             </div>
 
-            <div className="flex space-x-10 w-full h-auto">
+            <div className="flex space-x-2 md:space-x-10 w-full h-auto">
                 <div className="border-l-3 border-white" />
                 <div className="flex flex-col w-full space-y-4">
                     {expItems && expItems.length > 0 ? (
