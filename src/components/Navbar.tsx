@@ -1,11 +1,7 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { GiHamburgerMenu } from "react-icons/gi"
-
-type navBarLink = {
-    label: string
-    route: string
-}
+import type { navBarLink } from "./types"
 
 export default function Navbar() {
     const [open, setOpen] = useState(false)

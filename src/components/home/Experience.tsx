@@ -19,65 +19,22 @@ export default function Experience() {
             if (!response.ok) {
                 throw new Error('Could not retrieve resume data')
             }
-            const rawText = await response.text()
-            console.log(data, error, isLoading, isError, isSuccess)
-            return rawText
+            console.log(error, isLoading, isError, isSuccess)
+            return response.text()
         },
     })
 
     useEffect(() => {
-        // 2. Check if the query was successful AND data exists.
         if (isSuccess && data) {
             try {
-                // 3. Parse the raw LaTeX content using your function.
                 const parsedItems: ExperienceItem[] = parseExperience(data);
-
-                // 4. Set the state with the parsed data.
                 setExpItems(parsedItems);
-
-                console.log("Successfully parsed and set experience items:", parsedItems);
+                // console.log("Successfully parsed and set experience items:", parsedItems);
             } catch (e) {
                 console.error("Error parsing LaTeX content:", e);
-                // Optionally handle parsing error state here
             }
         }
-        // Dependency array: Rerun this effect only when data or isSuccess changes.
     }, [data, isSuccess]);
-
-    // const mockExp: ExperienceItem[] = [
-    //     {
-    //         "title": "Supplemental Instruction (SI) Leader",
-    //         "company": "California State University, Fullerton",
-    //         "timeline": "Jan 2024 -- Present",
-    //         "location": "Fullerton, CA",
-    //         "bullets": [
-    //             "Increased student grades and comprehension an average of 10% by leading 90 peer-assisted study sessions across three semesters and developing targeted review materials that simplified key Calculus I and II concepts",
-    //             "Utilized innovative teaching methods such as guided group discussions, collaborative problem-solving, and peer-to-peer interaction to create an engaging learning environment that reinforced foundational calculus topics"
-    //         ]
-    //     },
-    //     {
-    //         "title": "Software Engineer Intern",
-    //         "company": "Glenair, Inc.",
-    //         "timeline": "May 2025 -- Aug 2025",
-    //         "location": "Anaheim, CA",
-    //         "bullets": [
-    //             "Engineered a full-stack web application to generate Zebra printer label templates, printing approximately ~600 labels per week, utilizing React, FastAPI, SQLAlchemy, SQL Server, Labelary API, and Zebra Printer Language",
-    //             "Integrated inventory and job-order APIs to auto-populate part and job numbers into a custom Zebra label template, eliminating manual entry errors, guaranteeing 100% audit-trail accuracy, and accelerating workflows",
-    //             "Optimized Flask API endpoints by integrating MinIO storage buckets with SQL Server, reducing average file retrieval latency by an average of 60% compared to retrieving raw binary files from SQL tables"
-    //         ]
-    //     },
-    //     {
-    //         "title": "Crew Trainer",
-    //         "company": "McDonalds",
-    //         "timeline": "June 2022 -- May 2025",
-    //         "location": "Chino, CA",
-    //         "bullets": [
-    //             "Trained new hires and maintained efficient, high-quality service across multiple stations in a fast-paced setting"
-    //         ]
-    //     }
-    // ]
-
-
 
     return (
         <div className="flex flex-col space-y-5">

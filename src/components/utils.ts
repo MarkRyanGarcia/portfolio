@@ -1,84 +1,72 @@
 import type { ExperienceItem } from "./types";
 
-export function parseExperience(latexContent: string): ExperienceItem[] {
+export function parseExperience(latex: string): ExperienceItem[] {
     const experienceItems: ExperienceItem[] = [];
 
-    // 1. ISOLATE THE EXPERIENCE BLOCK
-    // Using [\s\S]*? to ensure we catch everything between the markers.
-    const experienceBlockMatch = latexContent.match(
+    const experienceBlockMatch = latex.match(
         /\\section\{Experience\}([\s\S]*?)\\resumeSubHeadingListEnd/
     );
 
     if (!experienceBlockMatch) {
-        console.error("FATAL PARSING FAILURE: Could not find the experience block markers.");
-        // Add a debugging hint:
-        console.log("Check if the raw file contains: \\section{Experience} and \\resumeSubHeadingListEnd");
+        console.error("Could not find the experience block.");
         return [];
     }
 
-    const experienceBlock = experienceBlockMatch[1]; 
-    console.log(`Successfully isolated Experience Block (Length: ${experienceBlock.length} chars).`);
+    const experienceBlock = experienceBlockMatch[1];
 
-    // 2. REGEX TO CAPTURE A SINGLE ITEM WITHIN THE BLOCK
-    // ************************************************************************************
-    // *** ULTIMATE FIX: Using [\\s\\S]*? to tolerate ALL content between arguments. ***
-    // ************************************************************************************
-    const experienceRegex = new RegExp(
-        /\\resumeSubheading[\s\S]*?/.source + // Start
-        /\{(.*?)\}[\s\S]*?/.source +          // Group 1: Title
-        /\{(.*?)\}[\s\S]*?/.source +          // Group 2: Timeline
-        /\{(.*?)\}[\s\S]*?/.source +          // Group 3: Company
-        /\{(.*?)\}[\s\S]*?/.source +          // Group 4: Location
-        
-        /\\resumeItemListStart[\s\S]*?/.source + // Required list start
-        
-        // Group 5: The full list of bullets (non-greedy match to \\resumeItemListEnd)
-        /([\s\S]*?)\\resumeItemListEnd/ 
-        ,'g'
-    );
+    const subheadingRegex =
+        /\\resumeSubheading\s*\n\s*\{([^}]+)\}\{([^}]+)\}\s*\n\s*\{([^}]+)\}\{([^}]+)\}\s*\n\s*\\resumeItemListStart([\s\S]*?)\\resumeItemListEnd/g;
 
-    const bulletRegex = /\\resumeItem\{([\s\S]*?)\}/g;
-    
-    let match;
-    let itemCounter = 0;
-    
-    // Execute the regex against the ISOLATED block
-    while ((match = experienceRegex.exec(experienceBlock)) !== null) {
-        itemCounter++;
-        console.log(`--> FOUND ITEM #${itemCounter}. Title: ${match[1].trim()}`);
 
-        const title = match[1].trim();
-        const timeline = match[2].trim();
-        const company = match[3].trim();
-        const location = match[4].trim(); 
-        const bulletsBlock = match[5]; 
+    let match: RegExpExecArray | null;
 
-        const bullets: string[] = [];
-        let bulletMatch;
-        bulletRegex.lastIndex = 0;
-        
-        while ((bulletMatch = bulletRegex.exec(bulletsBlock)) !== null) {
-            const cleanedBullet = bulletMatch[1]
-                .replace(/\\textbf\{([^\}]*)\}/g, '$1') 
-                .replace(/\\btilde/g, '~')              
-                .replace(/^[ \t\r\n]+|[ \t\r\n]+$/g, '')
-                .trim();
-            
-            if (cleanedBullet) {
-                bullets.push(cleanedBullet);
-            }
-        }
-        console.log(`---- Parsed ${bullets.length} bullets.`);
+    while ((match = subheadingRegex.exec(experienceBlock)) !== null) {
+        const [, title, timeline, company, location, itemsBlock] = match;
+
+        const rawBullets = extractBraceBlocks(itemsBlock, "resumeItem");
+
+        const bullets = rawBullets.map(b =>
+            b
+                .replace(/\\textbf\{([^}]+)\}/g, "$1")
+                .replace(/\\%/g, "%")
+                .replace(/\\btilde/g, "~")
+                .replace(/\s+/g, " ")
+                .trim()
+        );
 
         experienceItems.push({
-            title,
-            company,
-            timeline,
-            location,
+            title: title.trim(),
+            company: company.trim(),
+            timeline: timeline.replace(/--/g, "–").trim(),
+            location: location.trim(),
             bullets
         });
     }
 
-    console.log(`Parser finished execution. Total items returned: ${experienceItems.length}.`);
     return experienceItems;
+}
+
+function extractBraceBlocks(
+    input: string,
+    command: string
+): string[] {
+    const results: string[] = [];
+    const startToken = `\\${command}{`;
+
+    let i = 0;
+    while ((i = input.indexOf(startToken, i)) !== -1) {
+        let depth = 1;
+        let j = i + startToken.length;
+
+        while (j < input.length && depth > 0) {
+            if (input[j] === "{") depth++;
+            else if (input[j] === "}") depth--;
+            j++;
+        }
+
+        results.push(input.slice(i + startToken.length, j - 1));
+        i = j;
+    }
+
+    return results;
 }
