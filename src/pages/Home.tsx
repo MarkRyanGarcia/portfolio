@@ -1,25 +1,17 @@
 import { FiGithub } from "react-icons/fi";
 import { CiLinkedin } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import ExperienceItem from "../components/home/ExperienceItem";
 
 export default function Home() {
     const linkStyle = 'text-tertiary underline font-bold hover:text-base hover:no-underline hover:bg-tertiary transition duration-300 ease-in-out'
-
-    const [selectedExperience, setSelectedExperience] = useState(true)
-
-    const selectedStyle = "bg-base h-8 w-1/2 rounded-lg m-1 text-center text-primary transition-colors duration-100 ease-in-out"
-    const disabledStyle = "h-8 w-1/2 rounded-3xl m-1 text-center text-base cursor-pointer transition-colors duration-100 ease-in-out"
-
 
     return (
         <div className="w-full m-5 md:py-15 md:mx-0 space-y-16 md:space-y-20">
 
             {/* Top Part with intro and pic */}
             <div className="space-y-7 md:-space-y-5">
-                <div className="flex flex-col md:flex-row space-y-3 md:space-y-0">
-                    <div className="flex flex-col md:w-[55%] space-y-5">
+                <div className="flex flex-col sm:flex-row space-y-3 md:space-y-0">
+                    <div className="flex flex-col sm:w-[55%] space-y-5">
                         <h1 className="text-primary text-3xl font-bold">
                             Hey, I'm <span className="text-tertiary">Mark Garcia</span>
                         </h1>
@@ -31,7 +23,7 @@ export default function Home() {
                                 target="_blank">Association for Computing Machinery (ACM)</a>.
                         </p>
                     </div>
-                    <div className="flex md:w-[45%] justify-center mx-auto">
+                    <div className="flex sm:w-[45%] justify-end mx-auto">
                         <img src="/mark/mark.png" className="w-50 rounded-full border-4 border-secondary hover:border-tertiary transition-colors duration-200 ease-in-out" />
                     </div>
                 </div>
@@ -55,19 +47,15 @@ export default function Home() {
                 </nav>
             </div>
 
-            {/* Work + Education */}
-            <div className="flex flex-col space-y-3">
-                <div className="flex align-center bg-secondary w-full h-10 rounded-xl">
-                    <button className={selectedExperience ? selectedStyle : disabledStyle} onClick={() => setSelectedExperience(true)}>
-                        Work
-                    </button>
-                    <button className={selectedExperience ? disabledStyle : selectedStyle} onClick={() => setSelectedExperience(false)}>
-                        Education
-                    </button>
-                </div>
-
-                <div className="w-full h-100 border-4 border-secondary rounded-xl">
-                    <ExperienceItem selectedExperience={selectedExperience}/>
+            {/* Experience */}
+            <div>
+                <div className="flex justify-between items-center w-full ">
+                    <h2 className="text-primary text-3xl font-bold">
+                        Experience
+                    </h2>
+                    <NavLink to="/resume" className={`flex ${linkStyle}`}>
+                        <p className="">{"View Resume ->"}</p>
+                    </NavLink>
                 </div>
             </div>
 

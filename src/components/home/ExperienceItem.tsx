@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 
-export default function ExperienceItem({ selectedExperience }: { selectedExperience: boolean }) {
+export default function ExperienceItem() {
 
     const { data, error, isLoading, isError, isSuccess } = useQuery({
         queryKey: ['rawResume'],
@@ -17,7 +17,7 @@ export default function ExperienceItem({ selectedExperience }: { selectedExperie
 
     return (
         <h1>
-            t - {selectedExperience} - {error?.name} {isLoading}, {isError}, {isSuccess}
+            t- {error?.name} {isLoading}, {isError}, {isSuccess}
         </h1>
     )
 }
