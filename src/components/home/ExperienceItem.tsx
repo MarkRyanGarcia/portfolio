@@ -17,7 +17,7 @@ export default function ExperienceItem() {
 
     return (
         <h1>
-            t- {error?.name} {isLoading}, {isError}, {isSuccess}
+            t - {data} - {error?.name} {isLoading}, {isError}, {isSuccess}
         </h1>
     )
 }
