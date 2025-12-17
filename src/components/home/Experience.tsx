@@ -46,7 +46,7 @@ export default function Experience() {
                 </NavLink>
             </div>
 
-            <div className="flex space-x-2 md:space-x-10 w-full h-auto">
+            <div className="flex space-x-2 md:space-x-4 w-full h-auto">
                 <div className="border-l-3 border-white" />
                 <div className="flex flex-col w-full space-y-4">
                     {expItems && expItems.length > 0 ? (
