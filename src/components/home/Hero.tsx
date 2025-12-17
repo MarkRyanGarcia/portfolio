@@ -24,7 +24,7 @@ export default function Hero() {
                     <img src="/mark/mark.png" className="w-50 rounded-full border-4 border-secondary hover:border-tertiary transition-colors duration-200 ease-in-out" />
                 </div>
             </div>
-            <nav className="flex flex-wrap space-x-5 space-y-2 text-secondary">
+            <div className="flex flex-wrap space-x-5 space-y-2 text-secondary">
                 <a className="flex hover:text-tertiary transition-colors duration-300 ease-in-out" href="https://linkedin.com/in/markryangarcia/" target="_blank">
                     <CiLinkedin className="mr-1.5" size={22} /> LinkedIn
                 </a>
@@ -41,7 +41,7 @@ export default function Hero() {
                         {"->"}
                     </p>
                 </NavLink>
-            </nav>
+            </div>
         </div>
     )
 }

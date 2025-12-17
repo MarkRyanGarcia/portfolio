@@ -7,7 +7,7 @@ export default function App() {
     return (
         <Router>
             <Navbar />
-            <div className='flex max-w-3xl mx-auto m-5 md:py-15'>
+            <div className='flex max-w-4xl mx-auto m-5 px-5 md:px-0 md:py-15'>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />

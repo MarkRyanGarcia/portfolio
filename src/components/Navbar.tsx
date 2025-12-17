@@ -39,7 +39,7 @@ export default function Navbar() {
                 />
 
                 <div className="relative">
-                    <div className="flex justify-between h-12 md:h-5 md:space-x-12 md:max-w-3xl mx-auto py-3 md:py-9 text-lg">
+                    <div className="flex justify-between h-12 md:h-5 md:space-x-12 md:max-w-4xl mx-auto py-3 md:py-9 text-lg">
 
                         <div className="hidden md:flex space-x-12 md:-my-3.5">
                             {navItems?.map((item, idx) => (
@@ -63,8 +63,8 @@ export default function Navbar() {
                     {/* Mobile dropdown thing */}
                     {open && (
                         <div className="md:hidden flex flex-col items-center space-y-4 pb-4 text-lg">
-                            {navItems?.map((item) => (
-                                <NavLink to={item.route} className={hoverStyle} onClick={handleNavMobile}>{item.label}</NavLink>
+                            {navItems?.map((item, idx) => (
+                                <NavLink  key={`nav-${idx}`} to={item.route} className={hoverStyle} onClick={handleNavMobile}>{item.label}</NavLink>
                             ))}
                         </div>
                     )}
