@@ -33,14 +33,15 @@ export default function Hero() {
                     <FiGithub className="translate-y-1 mr-1.5" /> Github
                 </a>
                 <p>|</p>
-                <NavLink to="/about" className="flex space-x-1 transition duration-300 ease-in-out hover:space-x-2 hover:text-tertiary">
+                <a href="https://docs.google.com/viewerng/viewer?url=https://raw.githubusercontent.com/MarkRyanGarcia/Resume/main/resume.pdf"
+                    target='_blank' className="transition duration-300 ease-in-out hover:text-tertiary">
                     <p className="max-h-6">
                         More about me
                     </p>
                     <p className="max-h-6">
                         {"->"}
                     </p>
-                </NavLink>
+                </a>
             </div>
         </div>
     )
