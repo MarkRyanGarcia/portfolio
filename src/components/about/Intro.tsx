@@ -40,11 +40,15 @@ export default function Intro() {
                             <FiGithub className="translate-y-1 mr-1.5" /> Github
                         </a>
                         <p>|</p>
-                        <NavLink to="/resume" className="transition duration-300 ease-in-out hover:text-tertiary">
+                        {/* <NavLink to="/resume" className="transition duration-300 ease-in-out hover:text-tertiary">
                             <p className="max-h-6">
                                 Resume
                             </p>
-                        </NavLink>
+                        </NavLink> */}
+                        <a href="https://docs.google.com/viewerng/viewer?url=https://raw.githubusercontent.com/MarkRyanGarcia/Resume/main/resume.pdf"
+                            target='_blank' className="transition duration-300 ease-in-out hover:text-tertiary">
+                            Resume
+                        </a>
                     </div>
 
                 </div>

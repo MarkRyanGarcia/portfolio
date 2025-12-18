@@ -1,6 +1,7 @@
 export type navBarLink = {
     label: string
-    route: string
+    route?: string
+    href?: string
 }
 
 export type ExperienceItem = {

@@ -23,7 +23,7 @@ export default function Navbar() {
         },
         {
             label: "resume",
-            route: "/resume"
+            href: "https://docs.google.com/viewerng/viewer?url=https://raw.githubusercontent.com/MarkRyanGarcia/Resume/main/resume.pdf"
         },
         {
             label: "contact",
@@ -43,7 +43,9 @@ export default function Navbar() {
 
                         <div className="hidden md:flex space-x-12 md:-my-3.5">
                             {navItems?.map((item, idx) => (
-                                <NavLink key={`nav-${idx}`} to={item.route} className={hoverStyle}>{item.label}</NavLink>
+                                item.route ?
+                                    <NavLink key={`nav-${idx}`} to={item.route} className={hoverStyle}>{item.label}</NavLink>
+                                    : <a key={`nav-${idx}`} href={item.href} target='_blank' className={hoverStyle}>{item.label}</a>
                             ))}
                         </div>
 
@@ -64,7 +66,10 @@ export default function Navbar() {
                     {open && (
                         <div className="md:hidden flex flex-col items-center space-y-4 pb-4 text-lg">
                             {navItems?.map((item, idx) => (
-                                <NavLink  key={`nav-${idx}`} to={item.route} className={hoverStyle} onClick={handleNavMobile}>{item.label}</NavLink>
+                                item.route ?
+                                    <NavLink key={`nav-${idx}`} to={item.route} className={hoverStyle} onClick={handleNavMobile}>{item.label}</NavLink>
+                                    :
+                                    <a key={`nav-${idx}`} href={item.href} target='_blank' className={hoverStyle} onClick={handleNavMobile}>{item.label}</a>
                             ))}
                         </div>
                     )}
