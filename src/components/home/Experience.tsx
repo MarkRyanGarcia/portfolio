@@ -41,9 +41,11 @@ export default function Experience() {
                 <h2 className="text-primary text-3xl font-bold">
                     Experience
                 </h2>
-                <NavLink to="/resume" className={`flex ${linkStyle}`}>
-                    <p className="">{"View Resume ->"}</p>
-                </NavLink>
+                <a href="https://docs.google.com/viewerng/viewer?url=https://raw.githubusercontent.com/MarkRyanGarcia/Resume/main/resume.pdf"
+                    target='_blank' className="flex transition duration-300 ease-in-out hover:text-tertiary">
+                    <p className={`${linkStyle}`}>{"View Resume ->"}</p>
+                </a>
+
             </div>
 
             <div className="flex space-x-2 md:space-x-4 w-full h-auto">
