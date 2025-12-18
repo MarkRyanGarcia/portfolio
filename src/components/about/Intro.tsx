@@ -1,6 +1,5 @@
 import { CiLinkedin } from "react-icons/ci";
 import { FiGithub } from "react-icons/fi";
-import { NavLink } from "react-router-dom";
 
 export default function Intro() {
     return (
