@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import ExperienceCard from "./ExperienceCard";
 import type { ExperienceItem } from "../types";
 import { useQuery } from "@tanstack/react-query";
