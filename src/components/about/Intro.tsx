@@ -1,5 +1,6 @@
 import { CiLinkedin } from "react-icons/ci";
 import { FiGithub } from "react-icons/fi";
+import { NavLink } from "react-router-dom";
 
 export default function Intro() {
     return (
@@ -7,11 +8,16 @@ export default function Intro() {
             <h2 className="text-primary text-3xl font-bold">
                 About <span className="text-tertiary">Me</span>
             </h2>
-            <div className="flex flex-col w-full md:flex-row md:justify-between space-y-5 md:space-y-0">
-                <div className="md:w-85 h-92 bg-secondary rounded-md">
-                    image placeholder
+            <div className="flex flex-col w-full gap-6 md:flex-row md:items-center">
+
+                <div className="flex justify-center w-full md:w-[40%]">
+                    <img
+                        src="/mark/mark.png"
+                        className="w-full max-w-xs md:max-w-sm rounded-md bg-secondary object-cover"
+                    />
                 </div>
-                <div className="flex flex-col space-y-4 w-full md:w-[60%] md:px-5 text-secondary">
+
+                <div className="flex flex-col w-full gap-4 md:w-[60%] md:px-6 text-secondary">
                     <p>
                         Hey! I’m Mark Garcia, a Computer Science student at Cal State
                         Fullerton with a minor in Mathematics, graduating in May 2026.
@@ -30,21 +36,30 @@ export default function Intro() {
                         (Ranked Top 0.1% NA), going out with friends, and eating lots and
                         lots of Mexican food.
                     </p>
-                    <div className="flex flex-wrap space-x-5 space-y-2 text-secondary">
-                        <a className="flex hover:text-tertiary transition-colors duration-300 ease-in-out" href="https://linkedin.com/in/markryangarcia/" target="_blank">
-                            <CiLinkedin className="mr-1.5" size={22} /> LinkedIn
-                        </a>
-                        <p>|</p>
-                        <a className="flex hover:text-tertiary transition-colors duration-300 ease-in-out" href="https://github.com/MarkRyanGarcia" target="_blank">
-                            <FiGithub className="translate-y-1 mr-1.5" /> Github
-                        </a>
-                        <p>|</p>
-                        <a href="https://docs.google.com/viewerng/viewer?url=https://raw.githubusercontent.com/MarkRyanGarcia/Resume/main/resume.pdf"
-                            target='_blank' className="transition duration-300 ease-in-out hover:text-tertiary">
-                            Resume
-                        </a>
-                    </div>
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                        <a href="https://linkedin.com/in/markryangarcia/" target="_blank"
+                            className="flex items-center hover:text-tertiary transition-colors duration-300 ease-in-out"
+                        >
+                            <CiLinkedin className="mr-1.5" size={22} />
+                            LinkedIn
+                        </a><p>|</p>
 
+                        <a href="https://github.com/MarkRyanGarcia" target="_blank"
+                            className="flex items-center hover:text-tertiary transition-colors duration-300 ease-in-out"
+                        >
+                            <FiGithub className="mr-1.5" />
+                            GitHub
+                        </a><p>|</p>
+
+                        <NavLink to="/projects" className="flex space-x-1 transition duration-300 ease-in-out hover:space-x-2 hover:text-tertiary">
+                            <p className="max-h-6">
+                                Projects
+                            </p>
+                            <p className="max-h-6">
+                                {"->"}
+                            </p>
+                        </NavLink>
+                    </div>
                 </div>
             </div>
         </div>
