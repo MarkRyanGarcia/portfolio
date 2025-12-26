@@ -21,3 +21,15 @@ export type ExperienceItem = {
     location: string
     bullets: string[]
 }
+
+type ProjectLinks = {
+    Deployment?: string;
+    Github?: string;
+}
+
+export type Project = {
+    title: string;
+    description: string;
+    image_path: string;
+    links?: ProjectLinks;
+}
