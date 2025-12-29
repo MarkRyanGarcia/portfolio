@@ -70,7 +70,7 @@ export default function Projects() {
                                     <div className="flex gap-2 justify-center">
                                         {project.links.Deployment && (
                                             <a href={project.links.Deployment} target="_blank"
-                                                className="flex items-center hover:text-tertiary transition-colors duration-300 ease-in-out border py-0.5 px-1.5 rounded-md"
+                                                className="flex items-center hover:text-base hover:bg-tertiary transition-colors duration-300 ease-in-out border py-0.5 px-1.5 rounded-md"
                                             >
                                                 <MdLanguage className="mr-1.5" />
                                                 Visit Site 
@@ -79,7 +79,7 @@ export default function Projects() {
                                         {project.links.Github && (
 
                                             <a href={project.links.Github} target="_blank"
-                                                className="flex items-center hover:text-tertiary transition-colors duration-300 ease-in-out border py-0.5 px-1.5 rounded-md"
+                                                className="flex items-center hover:text-base hover:bg-tertiary transition-colors duration-300 ease-in-out border py-0.5 px-1.5 rounded-md"
                                             >
                                                 <FiGithub className="mr-1.5" />
                                                 GitHub
