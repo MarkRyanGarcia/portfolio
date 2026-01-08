@@ -9,7 +9,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      content: `@markgdev @everyone New message from ${name} (${email}):\n${message}`
+      content: `# @everyone NEW MESSAGE\n**Name: ${name}**\n**Email: (${email})**:\n\n${message}`
     })
   });
 
