@@ -16,6 +16,10 @@ export default function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="resume" Component={() => {
+                        window.location.href = 'https://docs.google.com/viewerng/viewer?url=https://raw.githubusercontent.com/MarkRyanGarcia/Resume/main/resume.pdf';
+                        return null
+                    }} />
                 </Routes>
             </div>
             <Footer />

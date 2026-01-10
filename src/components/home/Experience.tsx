@@ -3,6 +3,7 @@ import type { ExperienceItem } from "../types";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, } from "react";
 import { parseExperience } from "../utils";
+import { NavLink } from "react-router-dom";
 
 export default function Experience() {
     const linkStyle = 'text-tertiary underline font-bold hover:text-base hover:no-underline hover:bg-tertiary transition duration-300 ease-in-out'
@@ -54,10 +55,13 @@ export default function Experience() {
                 <h2 className="text-primary text-3xl font-bold">
                     Experience
                 </h2>
-                <a href="https://docs.google.com/viewerng/viewer?url=https://raw.githubusercontent.com/MarkRyanGarcia/Resume/main/resume.pdf"
-                    target='_blank' className="flex transition duration-300 ease-in-out hover:text-tertiary">
+                <NavLink
+                    to="/resume"
+                    target='_blank'
+                    className="flex transition duration-300 ease-in-out hover:text-tertiary"
+                >
                     <p className={`${linkStyle}`}>{"View Resume ->"}</p>
-                </a>
+                </NavLink>
 
             </div>
 
