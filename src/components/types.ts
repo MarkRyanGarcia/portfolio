@@ -4,6 +4,7 @@ type BaseLink = {
 
 type InternalLink = BaseLink & {
     route: string;
+    open_new_tab?: boolean;
     href?: never;
 };
 

@@ -11,23 +11,24 @@ export default function Navbar() {
     const navItems: NavBarLink[] = [
         {
             label: "home",
-            route: "/"
+            route: "/",
         },
         {
             label: "about",
-            route: "/about"
+            route: "/about",
         },
         {
             label: "projects",
-            route: "/projects"
+            route: "/projects",
         },
         {
             label: "resume",
-            href: "https://docs.google.com/viewerng/viewer?url=https://raw.githubusercontent.com/MarkRyanGarcia/Resume/main/resume.pdf"
+            route: "/resume",
+            open_new_tab: true,
         },
         {
             label: "contact",
-            route: "/contact"
+            route: "/contact",
         },
     ]
 
@@ -44,7 +45,7 @@ export default function Navbar() {
                         <div className="hidden md:flex space-x-12 md:-my-3.5">
                             {navItems?.map((item, idx) => (
                                 item.route ?
-                                    <NavLink key={`nav-${idx}`} to={item.route} className={hoverStyle}>{item.label}</NavLink>
+                                    <NavLink key={`nav-${idx}`} to={item.route} target={`${item.open_new_tab ? "_blank" : ""}`} className={hoverStyle}>{item.label}</NavLink>
                                     : <a key={`nav-${idx}`} href={item.href} target='_blank' className={hoverStyle}>{item.label}</a>
                             ))}
                         </div>
