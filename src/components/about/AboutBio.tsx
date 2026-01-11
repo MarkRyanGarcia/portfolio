@@ -29,7 +29,7 @@ export default function AboutBio() {
                 <TooltipText
                     id="valorant rank"
                     label="Valorant"
-                    tooltip="Ranked Top 0.1% in NA"
+                    tooltip="Top 0.1% in NA"
                 />
                 , going out with friends, and eating lots and lots of Mexican food.
             </p>

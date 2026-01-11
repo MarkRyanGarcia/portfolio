@@ -11,22 +11,28 @@ export default function App() {
     return (
         <TooltipProvider>
             <Router>
-                <Navbar />
-                <div className='flex max-w-4xl mx-auto m-5 min-h-[calc(100vh-197px)] px-5 md:px-0 md:py-15'>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/projects" element={<Projects />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="resume" Component={() => {
-                            window.location.href = 'https://docs.google.com/viewerng/viewer?url=https://raw.githubusercontent.com/MarkRyanGarcia/Resume/main/Mark_Garcia_Resume.pdf';
-                            return null
-                        }} />
-                    </Routes>
+                {/* 1. This wrapper ensures the content always fills at least the full screen */}
+                <div className="flex flex-col min-h-screen max-w-4xl mx-auto">
+
+                    <Navbar />
+
+                    {/* 2. This container grows to fill all space between Navbar and Footer */}
+                    <main className='grow max-w-4xl mx-auto w-full px-5 md:px-0 pt-5 md:pt-15'>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/projects" element={<Projects />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route path="resume" Component={() => {
+                                window.location.href = 'https://docs.google.com/viewerng/viewer?url=https://raw.githubusercontent.com/MarkRyanGarcia/Resume/main/Mark_Garcia_Resume.pdf';
+                                return null;
+                            }} />
+                        </Routes>
+                    </main>
+
+                    <Footer />
                 </div>
-                <Footer />
             </Router>
         </TooltipProvider>
-
     );
 }

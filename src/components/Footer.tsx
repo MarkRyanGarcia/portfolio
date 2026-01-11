@@ -5,7 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
     return (
-        <div className='flex justify-between max-w-4xl mx-auto p-5 mb-0 md:mb-5 bg-base-2 text-secondary md:rounded-lg'>
+        <div className='flex justify-between w-full mx-auto p-5 sm:mb-5 mt-10 bg-base-2 text-secondary md:rounded-lg'>
             <p className="self-center">
                 © {new Date().getFullYear()} Mark Garcia
             </p>
