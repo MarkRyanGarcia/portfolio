@@ -1,6 +1,6 @@
 import { MdLanguage } from "react-icons/md";
 import { FiGithub } from "react-icons/fi";
-import type { Project } from "../types";
+import type { Project } from "../../lib/types";
 
 interface ProjectCardProps {
     project: Project;

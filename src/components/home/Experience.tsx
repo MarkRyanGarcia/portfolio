@@ -1,8 +1,8 @@
 import ExperienceCard from "./ExperienceCard";
-import type { ExperienceItem } from "../types";
+import type { ExperienceItem } from "../../lib/types";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, } from "react";
-import { parseExperience } from "../utils";
+import { parseExperience } from "../../lib/utils";
 import { NavLink } from "react-router-dom";
 
 export default function Experience() {

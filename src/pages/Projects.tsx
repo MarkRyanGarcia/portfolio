@@ -1,4 +1,4 @@
-import type { Project } from "../components/types";
+import type { Project } from "../lib/types";
 import ProjectCard from "../components/projects/ProjectCard";
 
 export default function Projects() {
