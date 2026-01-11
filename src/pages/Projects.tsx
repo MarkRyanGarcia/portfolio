@@ -42,12 +42,12 @@ export default function Projects() {
             },
         },
         {
-            title: "Portfolio Site",
-            description: "Hey, what's this doing here?",
-            image_path: "/ProjectImages/portfolio.png",
+            title: "Previous Portfolio Site",
+            description: "My old portfolio website",
+            image_path: "/ProjectImages/portfolio-old.png",
             links: {
-                Deployment: "https://markgarcia.dev/",
-                Github: "https://github.com/MarkRyanGarcia/Portfolio",
+                Deployment: "https://old.markgarcia.dev/",
+                Github: "https://github.com/MarkRyanGarcia/portfolio-old2",
             },
         },
     ];
