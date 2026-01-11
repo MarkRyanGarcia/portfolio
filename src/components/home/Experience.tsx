@@ -11,7 +11,7 @@ export default function Experience() {
     const { data, isLoading, isSuccess } = useQuery({
         queryKey: ['rawResume'],
         queryFn: async () => {
-            const response = await fetch('https://raw.githubusercontent.com/MarkRyanGarcia/Resume/refs/heads/main/resume.tex')
+            const response = await fetch('https://raw.githubusercontent.com/MarkRyanGarcia/Resume/refs/heads/main/Mark_Garcia_Resume.tex')
 
             if (!response.ok) {
                 throw new Error('Could not retrieve resume data')
