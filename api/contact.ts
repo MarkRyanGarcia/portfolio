@@ -6,7 +6,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const { name, contact, message } = req.body;
 
     const discordPayload = {
-        content: "@everyone",
+        content: "<@219639423577358336>",
         embeds: [
             {
                 title: "📬 New Portfolio Contact",
