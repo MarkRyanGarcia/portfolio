@@ -11,10 +11,10 @@ export default function App() {
     return (
         <TooltipProvider>
             <Router>
-                <div className='flex flex-col min-h-screen'>
+                <div className='flex flex-col justify-center min-h-screen mx-auto'>
                     <Navbar />
-                    <div className="max-w-4xl mx-auto">
-                        <main className='grow max-w-4xl mx-auto w-full px-5 md:px-0 pt-5 md:pt-15'>
+                    <div className="flex flex-col justify-between grow max-w-4xl w-full mx-auto">
+                        <main className='mx-auto w-full px-5 md:px-0 pt-5 md:pt-15'>
                             <Routes>
                                 <Route path="/" element={<Home />} />
                                 <Route path="/about" element={<About />} />
@@ -30,7 +30,6 @@ export default function App() {
                         <Footer />
                     </div>
                 </div>
-
             </Router>
         </TooltipProvider>
     );
