@@ -8,7 +8,7 @@ export default function Hero() {
     return (
         <div className="space-y-7 md:-space-y-5">
             <div className="flex flex-col sm:flex-row space-y-3 md:space-y-0">
-                <div className="flex flex-col sm:w-[60%] space-y-5">
+                <div className="flex flex-col sm:w-[55%] space-y-5">
                     <h1 className="text-primary text-3xl font-bold">
                         Hey, I'm <span className="text-tertiary">Mark Garcia</span>
                     </h1>
@@ -20,7 +20,7 @@ export default function Hero() {
                             target="_blank">Association for Computing Machinery (ACM)</a>.
                     </p>
                 </div>
-                <div className="flex sm:w-[40%] justify-end mx-auto">
+                <div className="flex sm:w-[45%] justify-end mx-auto">
                     <img src="/mark/mark.png"
                         className="w-50 rounded-full border-4 border-secondary
                         hover:border-tertiary transition-colors duration-200 ease-in-out"
