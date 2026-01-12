@@ -9,7 +9,7 @@ export default function AboutLinks() {
                 href="https://linkedin.com/in/markryangarcia/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center hover:text-tertiary transition-colors duration-300 ease-in-out"
+                className="flex items-center hover:text-tertiary transition-colors duration-300 ease-in-out hover:-translate-y-0.5"
             >
                 <CiLinkedin className="mr-1.5" size={22} />
                 LinkedIn
@@ -21,7 +21,7 @@ export default function AboutLinks() {
                 href="https://github.com/MarkRyanGarcia"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center hover:text-tertiary transition-colors duration-300 ease-in-out"
+                className="flex items-center hover:text-tertiary transition-colors duration-300 ease-in-out hover:-translate-y-0.5"
             >
                 <FiGithub className="mr-1.5" />
                 GitHub
@@ -31,7 +31,7 @@ export default function AboutLinks() {
 
             <NavLink
                 to="/projects"
-                className="flex space-x-1 transition duration-300 ease-in-out hover:space-x-2 hover:text-tertiary"
+                className="flex space-x-1 transition duration-300 ease-in-out hover:space-x-2 hover:text-tertiary hover:-translate-y-0.5"
             >
                 <p className="max-h-6">Projects</p>
                 <p className="max-h-6">{"->"}</p>

@@ -28,13 +28,13 @@ export default function Hero() {
                 </div>
             </div>
             <div className="flex flex-wrap space-x-5 space-y-2 text-secondary font-bold">
-                <a className="flex hover:text-tertiary transition-colors duration-300
+                <a className="flex hover:text-tertiary transition-colors duration-300 hover:-translate-y-0.5
                     ease-in-out" href="https://linkedin.com/in/markryangarcia/" target="_blank"
                 >
                     <CiLinkedin className="mr-1.5" size={22} /> LinkedIn
                 </a>
                 <p>|</p>
-                <a className="flex hover:text-tertiary transition-colors duration-300
+                <a className="flex hover:text-tertiary transition-colors duration-300 hover:-translate-y-0.5
                     ease-in-out" href="https://github.com/MarkRyanGarcia" target="_blank"
                 >
                     <FiGithub className="translate-y-1 mr-1.5" /> Github
@@ -42,7 +42,7 @@ export default function Hero() {
                 <p>|</p>
                 <NavLink to="/about"
                     className="flex space-x-1 transition duration-300 ease-in-out
-                    hover:space-x-2 hover:text-tertiary"
+                    hover:space-x-2 hover:text-tertiary hover:-translate-y-0.5"
                 >
                     <p className="max-h-6">
                         More about me

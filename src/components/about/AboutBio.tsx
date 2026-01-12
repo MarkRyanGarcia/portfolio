@@ -13,7 +13,7 @@ export default function AboutBio() {
             </p>
 
             <p>
-                I am also heavily involved in
+                I am heavily involved in
                 <a className={linkStyle} href="https://acmcsuf.com/" target="_blank">
                     Association for Computing Machinery (ACM)
                 </a>{" "}
