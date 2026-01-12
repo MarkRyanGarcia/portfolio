@@ -1,10 +1,11 @@
+import { linkStyle } from "../../lib/styles";
 import TooltipText from "../ui/TooltipText";
 
 export default function AboutBio() {
     return (
         <div className="flex flex-col gap-4 text-secondary">
             <p>
-                Hey! I’m Mark Garcia, a Computer Science student at Cal State
+                Hey! I’m <span className="text-tertiary font-bold">Mark Garcia</span>, a Computer Science student at Cal State
                 Fullerton with a minor in Mathematics, graduating in May 2026.
                 Some of my work includes full stack projects built with React,
                 FastAPI, and SQL, as well as hackathon and club driven projects
@@ -12,8 +13,11 @@ export default function AboutBio() {
             </p>
 
             <p>
-                I am also heavily involved in Association for Computing Machinery
-                (ACM) at CSUF, currently leading the club as the President for
+                I am also heavily involved in
+                <a className={linkStyle} href="https://acmcsuf.com/" target="_blank">
+                    Association for Computing Machinery (ACM)
+                </a>{" "}
+                at CSUF, currently leading the club as the President for
                 the '25 to '26 year. I am also a Co-Director for FullyHacks 2026,
                 CSUF's biggest annual hackathon.
             </p>

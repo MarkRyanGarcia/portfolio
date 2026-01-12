@@ -60,7 +60,7 @@ export default function Experience() {
                     target='_blank'
                     className="flex transition duration-300 ease-in-out hover:text-tertiary"
                 >
-                    <p className={`${linkStyle}`}>{"View Resume ->"}</p>
+                    <p className={`${linkStyle}`}>{"View Full Resume ->"}</p>
                 </NavLink>
 
             </div>

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useTooltip } from "./TooltipContext";
+import { linkStyle } from "../../lib/styles";
 
 interface TooltipTextProps {
     id: string;
@@ -27,7 +28,7 @@ export default function TooltipText({ id, label, tooltip }: TooltipTextProps) {
     return (
         <span ref={ref} className="relative inline-block group">
             <span
-                className="cursor-pointer text-tertiary underline hover:text-base hover:no-underline hover:bg-tertiary transition duration-300 ease-in-out px-1 rounded"
+                className={linkStyle}
                 onClick={(e) => {
                     e.stopPropagation();
                     setOpenId(isOpen ? null : id);
