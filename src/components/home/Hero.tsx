@@ -27,7 +27,7 @@ export default function Hero() {
                     />
                 </div>
             </div>
-            <div className="flex flex-wrap space-x-5 space-y-2 text-secondary">
+            <div className="flex flex-wrap space-x-5 space-y-2 text-secondary font-bold">
                 <a className="flex hover:text-tertiary transition-colors duration-300
                     ease-in-out" href="https://linkedin.com/in/markryangarcia/" target="_blank"
                 >

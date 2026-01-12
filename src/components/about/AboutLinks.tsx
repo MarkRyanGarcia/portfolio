@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export default function AboutLinks() {
     return (
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-secondary">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-secondary font-bold">
             <a
                 href="https://linkedin.com/in/markryangarcia/"
                 target="_blank"
