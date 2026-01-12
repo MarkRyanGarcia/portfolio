@@ -13,8 +13,8 @@ export default function App() {
             <Router>
                 <div className='flex flex-col justify-center min-h-screen mx-auto'>
                     <Navbar />
-                    <div className="flex flex-col justify-between grow max-w-4xl w-full mx-auto">
-                        <main className='mx-auto w-full px-5 md:px-0 pt-5 md:pt-15'>
+                    <div className="flex flex-col justify-between grow max-w-7xl w-full mx-auto">
+                        <main className='mx-auto max-w-4xl w-full px-5 md:px-0 pt-5 md:pt-15'>
                             <Routes>
                                 <Route path="/" element={<Home />} />
                                 <Route path="/about" element={<About />} />

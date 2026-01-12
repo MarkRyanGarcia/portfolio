@@ -40,7 +40,7 @@ export default function Navbar() {
                 />
 
                 <div className="relative">
-                    <div className="flex justify-between h-12 md:h-5 md:space-x-12 md:max-w-4xl mx-auto py-3 md:py-9 text-lg">
+                    <div className="flex justify-between h-12 md:h-5 md:space-x-12 md:max-w-7xl mx-auto py-3 md:py-9 text-lg">
 
                         <div className="hidden md:flex space-x-12 md:-my-3.5">
                             {navItems?.map((item, idx) => (
