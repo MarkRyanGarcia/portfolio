@@ -6,14 +6,14 @@ import { FaChevronLeft, FaChevronRight, FaInstagram } from "react-icons/fa";
 export default function Footer() {
     return (
         <div className='flex justify-between w-full mx-auto p-5 sm:mb-5 mt-10 bg-base-2 text-secondary font-bold md:rounded-lg'>
-            <p className="self-center hidden sm:block">
+            {/* <p className="self-center hidden sm:block">
                 © {new Date().getFullYear()}
-            </p>
+            </p> */}
             <div className="flex gap-2 items-center">
                 <a href="https://webring-1.vercel.app/?from=markgdev&dir=prev" rel="noopener noreferrer" title="Previous site">
                     <FaChevronLeft size={15} />
                 </a>
-                <p>Mark Garcia</p>
+                <p>© {new Date().getFullYear()} Mark Garcia</p>
                 <a href="https://webring-1.vercel.app/?from=markgdev&dir=next" rel="noopener noreferrer" title="Next site">
                     <FaChevronRight size={15} />
                 </a>
