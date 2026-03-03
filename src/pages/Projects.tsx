@@ -4,6 +4,17 @@ import ProjectCard from "../components/projects/ProjectCard";
 export default function Projects() {
     const projects: Project[] = [
         {
+            title: "Realease",
+            description:
+                "An AI assistant that helps you understand the home-buying process. Realease provides personalized guidance, answers your questions, and shows you real listings, and provides predictive valuation insights. Submitted for IrvineHacks 2026.",
+            image_path: "/ProjectImages/realease.png",
+            links: {
+                Github: "https://github.com/MarkRyanGarcia/IrvineHacks26",
+                Deployment: "https://reallease.markgarcia.dev/",
+                Devpost: "https://devpost.com/software/realease",
+            },
+        },
+        {
             title: "Sudoku Solver",
             description:
                 "Enter your own puzzle or generate a new one, choose an algorithm, and watch the solution unfold step-by-step.",

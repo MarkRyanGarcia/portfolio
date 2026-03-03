@@ -26,6 +26,7 @@ export type ExperienceItem = {
 type ProjectLinks = {
     Deployment?: string;
     Github?: string;
+    Devpost?: string;
 }
 
 export type Project = {

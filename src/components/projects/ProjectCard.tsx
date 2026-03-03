@@ -1,6 +1,7 @@
 import { MdLanguage } from "react-icons/md";
 import { FiGithub } from "react-icons/fi";
 import type { Project } from "../../lib/types";
+import { FaLink } from "react-icons/fa";
 
 interface ProjectCardProps {
     project: Project;
@@ -46,6 +47,18 @@ export default function ProjectCard({ project, reverse = false }: ProjectCardPro
                                 >
                                     <FiGithub className="mr-1.5" />
                                     GitHub
+                                </a>
+                            )}
+
+                            {project.links.Devpost && (
+                                <a
+                                    href={project.links.Devpost}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center hover:text-base hover:bg-tertiary transition-all duration-300 ease-in-out border py-0.5 px-1.5 rounded-md hover:-translate-y-0.5"
+                                >
+                                    <FaLink className="mr-1.5" />
+                                    Devpost
                                 </a>
                             )}
                         </div>
