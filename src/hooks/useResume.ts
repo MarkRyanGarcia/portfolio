@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { parseExperience } from "../lib/utils";
-import type { ExperienceItem } from "../lib/types";
+import { parseExperience, parseLeadership } from "../lib/utils";
+import type { ExperienceItem, LeadershipItem } from "../lib/types";
 
 export function useResume() {
     const { data, isLoading, isSuccess, isError } = useQuery({
@@ -25,5 +25,15 @@ export function useResume() {
         }
     }, [data, isSuccess]);
 
-    return { expItems, isLoading, isSuccess, isError };
+    const leadershipItems = useMemo<LeadershipItem[]>(() => {
+        if (!isSuccess || !data) return [];
+        try {
+            return parseLeadership(data);
+        } catch (e) {
+            console.error("Error parsing leadership content:", e);
+            return [];
+        }
+    }, [data, isSuccess]);
+
+    return { expItems, leadershipItems, isLoading, isSuccess, isError };
 }

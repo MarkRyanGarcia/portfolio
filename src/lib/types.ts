@@ -23,6 +23,13 @@ export type ExperienceItem = {
     bullets: string[]
 }
 
+export type LeadershipItem = {
+    title: string
+    org: string
+    timeline: string
+    bullets: string[]
+}
+
 type ProjectLinks = {
     Deployment?: string;
     Github?: string;
