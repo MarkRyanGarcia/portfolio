@@ -3,25 +3,42 @@ import type { ExperienceItem } from "./types";
 export function parseExperience(latex: string): ExperienceItem[] {
     const experienceItems: ExperienceItem[] = [];
 
-    const experienceBlockMatch = latex.match(
-        /\\section\{Experience\}([\s\S]*?)\\resumeSubHeadingListEnd/
-    );
-
-    if (!experienceBlockMatch) {
+    // Find the experience section — handles both plain \section{Experience}
+    // and wrapped forms like \section{\textcolor{main}{\textbf{Experience}}}
+    const expIdx = latex.search(/\\section\{[^}]*(?:\{[^}]*\}[^}]*)*Experience/);
+    if (expIdx === -1) {
         console.error("Could not find the experience block.");
         return [];
     }
+    // Find the end of this section (next \resumeSubHeadingListEnd)
+    const afterSection = latex.slice(expIdx);
+    const endMatch = afterSection.match(/\}([\s\S]*?)\\resumeSubHeadingListEnd/);
+    if (!endMatch) {
+        console.error("Could not find the experience block end.");
+        return [];
+    }
+    const experienceBlock = endMatch[1];
 
-    const experienceBlock = experienceBlockMatch[1];
-
+    // Match both single-line: \resumeSubheading{arg1}{arg2}{arg3}{arg4}
+    // and multi-line: \resumeSubheading\n  {arg1}{arg2}\n  {arg3}{arg4}
+    // New format arg order: {company}{timeline}{title}{location}
+    // Old format arg order: {title}{timeline}\n{company}{location}
     const subheadingRegex =
-        /\\resumeSubheading\s*\n\s*\{([^}]+)\}\{([^}]+)\}\s*\n\s*\{([^}]+)\}\{([^}]+)\}\s*\n\s*\\resumeItemListStart([\s\S]*?)\\resumeItemListEnd/g;
+        /\\resumeSubheading\s*\{([^}]+)\}\{([^}]+)\}\s*\{([^}]+)\}\{([^}]+)\}\s*\\resumeItemListStart([\s\S]*?)\\resumeItemListEnd/g;
 
 
     let match: RegExpExecArray | null;
 
     while ((match = subheadingRegex.exec(experienceBlock)) !== null) {
-        const [, title, timeline, company, location, itemsBlock] = match;
+        // New format: {company}{timeline}{title}{location}
+        // Old format: {title}{timeline}{company}{location} (multi-line)
+        // Detect new format: single-line args (no newline between arg pairs)
+        const fullMatch = match[0];
+        const isNewFormat = !/\\resumeSubheading\s*\n/.test(fullMatch);
+        const [, arg1, arg2, arg3, arg4, itemsBlock] = match;
+        const [title, timeline, company, location] = isNewFormat
+            ? [arg3, arg2, arg1, arg4]
+            : [arg1, arg2, arg3, arg4];
 
         const rawBullets = extractBraceBlocks(itemsBlock, "resumeItem");
 
