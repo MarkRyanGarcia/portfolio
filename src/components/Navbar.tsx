@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { GiHamburgerMenu } from "react-icons/gi"
+import { HiArrowTopRightOnSquare } from "react-icons/hi2"
 import { navItems } from "../constants/navItems"
 
 export default function Navbar() {
@@ -21,8 +22,11 @@ export default function Navbar() {
                         <div className="hidden md:flex space-x-12 md:-my-3.5">
                             {navItems?.map((item, idx) => (
                                 item.route ?
-                                    <NavLink key={`nav-${idx}`} to={item.route} target={`${item.open_new_tab ? "_blank" : ""}`} className={hoverStyle}>{item.label}</NavLink>
-                                    : <a key={`nav-${idx}`} href={item.href} target='_blank' className={hoverStyle}>{item.label}</a>
+                                    <NavLink key={`nav-${idx}`} to={item.route} target={`${item.open_new_tab ? "_blank" : ""}`} className={`${hoverStyle} flex items-center gap-1`}>
+                                        {item.label}
+                                        {item.open_new_tab && <HiArrowTopRightOnSquare size={14} className="opacity-60" />}
+                                    </NavLink>
+                                    : <a key={`nav-${idx}`} href={item.href} target='_blank' className={`${hoverStyle} flex items-center gap-1`}>{item.label}</a>
                             ))}
                         </div>
 
@@ -44,7 +48,10 @@ export default function Navbar() {
                         <div className="md:hidden flex flex-col items-center space-y-4 pb-4 text-lg">
                             {navItems?.map((item, idx) => (
                                 item.route ?
-                                    <NavLink key={`nav-${idx}`} to={item.route} className={hoverStyle} onClick={handleNavMobile}>{item.label}</NavLink>
+                                    <NavLink key={`nav-${idx}`} to={item.route} target={`${item.open_new_tab ? "_blank" : ""}`} className={`${hoverStyle} flex items-center gap-1`} onClick={handleNavMobile}>
+                                        {item.label}
+                                        {item.open_new_tab && <HiArrowTopRightOnSquare size={14} className="opacity-60" />}
+                                    </NavLink>
                                     :
                                     <a key={`nav-${idx}`} href={item.href} target='_blank' className={hoverStyle} onClick={handleNavMobile}>{item.label}</a>
                             ))}
