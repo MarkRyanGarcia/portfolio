@@ -1,25 +1,7 @@
+import { useContactForm } from "../hooks/useContactForm";
+
 export default function Contact() {
-    async function submitForm(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault();
-
-        const form = e.currentTarget;
-        const formData = new FormData(form);
-
-        const data = {
-            name: formData.get("name") as string,
-            contact: formData.get("contact") as string,
-            message: formData.get("message") as string,
-        };
-
-        await fetch("/api/contact", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
-        });
-
-        alert("Message sent!");
-        form.reset();
-    }
+    const { isLoading, isError, isSuccess, submitForm } = useContactForm();
 
     return (
         <div className="flex justify-center w-full pt-10 md:pt-0">
@@ -62,11 +44,19 @@ export default function Contact() {
                     />
                 </div>
 
+                {isError && (
+                    <p className="text-red-400 text-sm">Something went wrong. Please try again.</p>
+                )}
+                {isSuccess && (
+                    <p className="text-green-400 text-sm">Message sent!</p>
+                )}
+
                 <button
                     type="submit"
-                    className="mt-2 rounded-md bg-tertiary px-6 py-2 font-semibold text-base transition-colors duration-300 ease-in-out hover:bg-primary"
+                    disabled={isLoading}
+                    className="mt-2 rounded-md bg-tertiary px-6 py-2 font-semibold text-base transition-colors duration-300 ease-in-out hover:bg-primary disabled:opacity-50"
                 >
-                    Send Message
+                    {isLoading ? "Sending..." : "Send Message"}
                 </button>
             </form>
         </div>

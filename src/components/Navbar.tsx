@@ -1,36 +1,12 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { GiHamburgerMenu } from "react-icons/gi"
-import type { NavBarLink } from "../lib/types"
+import { navItems } from "../constants/navItems"
 
 export default function Navbar() {
     const [open, setOpen] = useState(false)
     const hoverStyle = "hover:text-tertiary transition-colors duration-300 ease-in-out"
     const handleNavMobile = () => setOpen(false)
-
-    const navItems: NavBarLink[] = [
-        {
-            label: "home",
-            route: "/",
-        },
-        {
-            label: "about",
-            route: "/about",
-        },
-        {
-            label: "projects",
-            route: "/projects",
-        },
-        {
-            label: "resume",
-            route: "/resume",
-            open_new_tab: true,
-        },
-        {
-            label: "contact",
-            route: "/contact",
-        },
-    ]
 
     return (
         <nav className="sticky top-0 w-full z-50 text-primary font-bold">
