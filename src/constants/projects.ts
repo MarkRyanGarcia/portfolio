@@ -6,6 +6,7 @@ export const projects: Project[] = [
         description:
             "An AI assistant that helps you understand the home-buying process. Realease provides personalized guidance, answers your questions, and shows you real listings, and provides predictive valuation insights. Submitted for IrvineHacks 2026.",
         image_path: "/ProjectImages/realease.png",
+        featured: true,
         links: {
             Github: "https://github.com/MarkRyanGarcia/IrvineHacks26",
             Deployment: "https://devpost.com/software/realease",
@@ -16,6 +17,7 @@ export const projects: Project[] = [
         description:
             "Enter your own puzzle or generate a new one, choose an algorithm, and watch the solution unfold step-by-step.",
         image_path: "/ProjectImages/sudoku.png",
+        featured: true,
         links: {
             Github: "https://github.com/MarkRyanGarcia/cpsc481-sudoku",
             Deployment: "https://sudoku.markgarcia.dev/",

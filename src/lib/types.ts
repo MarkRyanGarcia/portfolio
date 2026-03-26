@@ -34,4 +34,5 @@ export type Project = {
     description: string;
     image_path: string;
     links?: ProjectLinks;
+    featured?: boolean;
 }
