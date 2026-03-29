@@ -2,6 +2,29 @@ import type { Project } from "../lib/types";
 
 export const projects: Project[] = [
     {
+        title: "[W.I.P.] Cohosted: An Event RSVP Site",
+        description:
+            "(In Progress) Events are always better when everybody pitches into the planning. Invite friends and prompt them with questions, polls, or just chat. Deployed with AWS (VPC, S3, Lambda, Cognito, ECR, RDS, IAM)",
+        image_path: "/ProjectImages/cohosted.png",
+        featured: false,
+        tags: ["AWS", "Docker", "CI/CD", "DevOps"],
+        links: {
+            Github: "https://github.com/elenav24/cpsc465-event-rsvp",
+        },
+    },
+    {
+        title: "[W.I.P.] conquian333.com",
+        description:
+            "(In Progress) Website for Conquian 333, a Mexican card game app with over 1.1 million downloads. Conquian is a traditional matching card game and one of the oldest rummy-style games in North America.",
+        image_path: "/ProjectImages/conquian333.png",
+        featured: false,
+        tags: ["React", "TypeScript", "Tailwind CSS"],
+        links: {
+            Github: "https://github.com/MarkRyanGarcia/conquian333.com",
+            Deployment: "https://www.conquian333.com/app/v2/",
+        },
+    },
+    {
         title: "fastapi-gen",
         description:
             "A modular fastapi app generation tool. No bloated/overkill boilerplate, only include the capabilities you need. Inspired by create-vite.",
@@ -10,6 +33,18 @@ export const projects: Project[] = [
         tags: ["Go", "CLI"],
         links: {
             Github: "https://github.com/MarkRyanGarcia/fastapi-gen",
+        },
+    },
+    {
+        title: "True Cost",
+        description:
+            "Project Submission for BeachHacks 9.0. Search any manufactured good and see its carbon footprint, supply chain map, and labor ethics score before you buy.",
+        image_path: "/ProjectImages/true_cost.jpg",
+        featured: false,
+        tags: ["FastAPI", "Python", "Cohere AI", "React", "TypeScript", "Tailwind CSS"],
+        links: {
+            Github: "https://github.com/elenav24/beachhacks",
+            Deployment: "https://devpost.com/software/trace-x8b97p",
         },
     },
     {
