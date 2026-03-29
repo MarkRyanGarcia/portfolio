@@ -2,6 +2,16 @@ import type { Project } from "../lib/types";
 
 export const projects: Project[] = [
     {
+        title: "fastapi-gen",
+        description:
+            "A modular fastapi app generation tool. No bloated/overkill boilerplate, only include the capabilities you need. Inspired by create-vite.",
+        image_path: "/ProjectImages/fastapi-gen-demo.gif",
+        featured: false,
+        links: {
+            Github: "https://github.com/MarkRyanGarcia/fastapi-gen",
+        },
+    },
+    {
         title: "ACM March Madness",
         description:
             "A 5-day coding challenge event hosted by ACM at California State University, Fullerton! Collaborate in teams and put your problem-solving skills to the test to see if you shall become the best!",
