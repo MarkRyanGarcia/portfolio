@@ -42,4 +42,5 @@ export type Project = {
     image_path: string;
     links?: ProjectLinks;
     featured?: boolean;
+    tags?: string[];
 }

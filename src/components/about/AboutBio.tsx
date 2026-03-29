@@ -5,11 +5,10 @@ export default function AboutBio() {
     return (
         <div className="flex flex-col gap-4 text-secondary">
             <p>
-                Hey! I’m <span className="text-tertiary font-bold">Mark Garcia</span>, a Computer Science student at Cal State
+                Hey! I'm <span className="text-tertiary font-bold">Mark Garcia</span>, a Computer Science student at Cal State
                 Fullerton with a minor in Mathematics, graduating in May 2026.
-                Some of my work includes full stack projects built with React,
-                FastAPI, and SQL, as well as hackathon and club driven projects
-                through ACM.
+                I focus on backend development — building APIs, CLI tooling, and data-driven systems
+                with Python, FastAPI, and SQL.
             </p>
 
             <p>
@@ -23,7 +22,7 @@ export default function AboutBio() {
             </p>
 
             <p>
-                Some of my interests include
+                Outside of code, I enjoy
                 <TooltipText
                     id="cube pb"
                     label="Rubik's Cubes"

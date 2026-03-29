@@ -36,12 +36,11 @@ export default function Experience() {
                 </NavLink>
             </div>
 
-            <div className="flex space-x-2 md:space-x-4 w-full h-auto">
-                <div className="border-l-3 border-white" />
-                <div className="flex flex-col w-full space-y-4">
-                    {isLoading ? <p>Fetching from resume...</p> : renderExperience()}
+            <div className="flex flex-col w-full space-y-4">
+                    {isLoading ? (
+                        <p className="text-secondary text-sm">Fetching from resume...</p>
+                    ) : renderExperience()}
                 </div>
-            </div>
         </div>
     );
 }

@@ -3,55 +3,63 @@ import { FiGithub } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import { linkStyle } from "../../lib/styles";
 
-
 export default function Hero() {
     return (
-        <div className="space-y-7 md:-space-y-5">
-            <div className="flex flex-col sm:flex-row space-y-3 md:space-y-0">
-                <div className="flex flex-col sm:w-[55%] space-y-5">
-                    <h1 className="text-primary text-3xl font-bold">
-                        Hey, I'm <span className="text-tertiary">Mark Garcia</span>
-                    </h1>
-                    <p className="text-secondary">
-                        I’m a Full-Stack Software Developer Intern @<a className={linkStyle}
-                            href="https://glenair.com/" target="_blank">Glenair, Inc.</a>I’m
-                        currently a 4th year student at CSU Fullerton, where I am the Fullerton
-                        Chapter President of the<a className={linkStyle} href="https://acmcsuf.com/"
-                            target="_blank">Association for Computing Machinery (ACM)</a>.
+        <div className="space-y-8">
+            <div className="flex flex-col sm:flex-row gap-6 items-start">
+                <div className="flex flex-col sm:w-[50%] space-y-4">
+                    <div className="space-y-1">
+                        <p className="text-tertiary text-sm font-semibold tracking-widest uppercase">
+                            Backend/FullStack Developer
+                        </p>
+                        <h1 className="text-primary text-4xl font-bold leading-tight">
+                            Mark Garcia
+                        </h1>
+                    </div>
+                    <p className="text-secondary leading-relaxed">
+                        Software Developer Intern @<a className={linkStyle}
+                            href="https://glenair.com/" target="_blank">Glenair, Inc.</a>
+                        4th year CS student at CSU Fullerton
+                        and President of{" "}
+                        <a className={linkStyle} href="https://acmcsuf.com/" target="_blank">
+                            ACM at CSUF
+                        </a>.
                     </p>
                 </div>
-                <div className="flex sm:w-[45%] justify-end mx-auto">
-                    <img src="/mark/mark.png"
-                        className="w-50 rounded-full border-4 border-secondary
+                <div className="flex sm:w-[50%] justify-center sm:justify-end mx-auto">
+                    <img
+                        src="/mark/mark.png"
+                        className="w-44 rounded-full border-4 border-secondary
                         hover:border-tertiary transition-colors duration-200 ease-in-out"
+                        alt="Mark Garcia"
                     />
                 </div>
             </div>
-            <div className="flex flex-wrap space-x-5 space-y-2 text-secondary font-bold">
-                <a className="flex hover:text-tertiary transition-colors duration-300 hover:-translate-y-0.5
-                    ease-in-out" href="https://linkedin.com/in/markryangarcia/" target="_blank"
+
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-secondary font-bold">
+                <a
+                    className="flex items-center gap-1.5 hover:text-tertiary transition-colors duration-300 ease-in-out"
+                    href="https://linkedin.com/in/markryangarcia/"
+                    target="_blank"
                 >
-                    <CiLinkedin className="mr-1.5" size={22} /> LinkedIn
+                    <CiLinkedin size={22} /> LinkedIn
                 </a>
-                <p>|</p>
-                <a className="flex hover:text-tertiary transition-colors duration-300 hover:-translate-y-0.5
-                    ease-in-out" href="https://github.com/MarkRyanGarcia" target="_blank"
+                <span className="text-secondary/40">|</span>
+                <a
+                    className="flex items-center gap-1.5 hover:text-tertiary transition-colors duration-300 ease-in-out"
+                    href="https://github.com/MarkRyanGarcia"
+                    target="_blank"
                 >
-                    <FiGithub className="translate-y-1 mr-1.5" /> Github
+                    <FiGithub size={18} /> GitHub
                 </a>
-                <p>|</p>
-                <NavLink to="/about"
-                    className="flex space-x-1 transition duration-300 ease-in-out
-                    hover:space-x-2 hover:text-tertiary hover:-translate-y-0.5"
+                <span className="text-secondary/40">|</span>
+                <NavLink
+                    to="/about"
+                    className="flex items-center gap-1 transition duration-300 ease-in-out hover:text-tertiary"
                 >
-                    <p className="max-h-6">
-                        More about me
-                    </p>
-                    <p className="max-h-6">
-                        {"->"}
-                    </p>
+                    More about me <span>{"→"}</span>
                 </NavLink>
             </div>
         </div>
-    )
+    );
 }

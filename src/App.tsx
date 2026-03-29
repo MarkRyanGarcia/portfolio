@@ -12,10 +12,10 @@ export default function App() {
     return (
         <TooltipProvider>
             <Router>
-                <div className='flex flex-col justify-center min-h-screen mx-auto'>
+                <div className='flex flex-col justify-center min-h-screen mx-auto px-5'>
                     <Navbar />
                     <div className="flex flex-col justify-between grow max-w-7xl w-full mx-auto">
-                        <main className='mx-auto max-w-5xl w-full px-5 md:px-0 pt-5 md:pt-15'>
+                        <main className='mx-auto max-w-5xl w-full px-5 pt-5 md:pt-15'>
                             <Routes>
                                 <Route path="/" element={<Home />} />
                                 <Route path="/about" element={<About />} />

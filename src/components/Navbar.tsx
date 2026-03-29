@@ -10,7 +10,7 @@ export default function Navbar() {
     const handleNavMobile = () => setOpen(false)
 
     return (
-        <nav className="sticky top-0 w-full z-50 text-primary font-bold">
+        <nav className="sticky top-0 w-full z-50 text-primary font-bold px-0">
             <div className="relative">
                 <div
                     className=" absolute inset-0 bg-base md:bg-transparent md:backdrop-blur-md md:mask-[linear-gradient(to_bottom,black,black_60%,transparent)]"

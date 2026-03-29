@@ -9,22 +9,27 @@ export default function Leadership() {
         if (leadershipItems.length === 0) return <p className="text-secondary">No leadership items found.</p>;
 
         return leadershipItems.map((item, idx) => (
-            <div key={idx} className="w-full bg-base-2 rounded-md p-5">
+            <div key={idx} className="w-full bg-base-2 border border-secondary rounded-lg p-5">
                 <div className="flex flex-col space-y-3">
-                    <div className="flex flex-col md:flex-row md:justify-between">
-                        <div className="flex flex-col">
-                            <h2 className="text-primary font-bold text-lg">{item.title}</h2>
-                            <h3 className="text-tertiary text-md">{item.org}</h3>
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
+                        <div>
+                            <h2 className="text-primary font-bold text-lg leading-tight">{item.title}</h2>
+                            <h3 className="text-tertiary text-sm font-semibold">{item.org}</h3>
                         </div>
-                        <div className="flex flex-col md:text-right">
-                            <h3 className="text-secondary text-sm">{item.timeline}</h3>
+                        <div className="flex flex-col md:items-end shrink-0">
+                            <span className="text-secondary text-sm px-2 py-0.5 w-fit">
+                                {item.timeline}
+                            </span>
                         </div>
                     </div>
-                    <div className="flex flex-col">
+                    <ul className="flex flex-col gap-1">
                         {item.bullets.map((bullet, bIdx) => (
-                            <p key={bIdx} className="text-secondary">• {bullet}</p>
+                            <li key={bIdx} className="text-secondary text-sm flex gap-2">
+                                <span className="text-tertiary shrink-0 mt-0.5">•</span>
+                                <span>{bullet}</span>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 </div>
             </div>
         ));
@@ -34,12 +39,9 @@ export default function Leadership() {
         <div className="flex flex-col space-y-5">
             <h2 className="text-primary text-3xl font-bold">Leadership</h2>
 
-            <div className="flex space-x-2 md:space-x-4 w-full h-auto">
-                <div className="border-l-3 border-white" />
-                <div className="flex flex-col w-full space-y-4">
-                    {isLoading ? <p className="text-secondary">Fetching from resume...</p> : renderItems()}
+            <div className="flex flex-col w-full space-y-4">
+                    {isLoading ? <p className="text-secondary text-sm">Fetching from resume...</p> : renderItems()}
                 </div>
-            </div>
         </div>
     );
 }
