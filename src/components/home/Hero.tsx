@@ -10,7 +10,7 @@ export default function Hero() {
                 <div className="flex flex-col sm:w-[50%] space-y-4">
                     <div className="space-y-1">
                         <p className="text-tertiary text-sm font-semibold tracking-widest uppercase">
-                            Backend/FullStack Developer
+                            Fullstack Developer | Backend Focused
                         </p>
                         <h1 className="text-primary text-4xl font-bold leading-tight">
                             Mark Garcia
