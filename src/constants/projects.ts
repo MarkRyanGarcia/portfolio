@@ -25,14 +25,14 @@ export const projects: Project[] = [
         },
     },
     {
-        title: "fastapi-gen",
+        title: "fapi-init",
         description:
-            "A modular fastapi app generation tool. No bloated/overkill boilerplate, only include the capabilities you need. Inspired by create-vite.",
-        image_path: "/ProjectImages/fastapi-gen-demo.gif",
+            "A modular fastapi app generation tool. No bloated/overkill boilerplate, only include the capabilities you need. Inspired by create-vite. Support for PostgreSQL with SQLAlchemy, SQLModel, or FastCRUD; MongoDB via PyMongo; Redis caching; and OIDC authentication",
+        image_path: "/ProjectImages/fapi-init-demo.gif",
         featured: false,
         tags: ["Go", "CLI"],
         links: {
-            Github: "https://github.com/MarkRyanGarcia/fastapi-gen",
+            Github: "https://github.com/MarkRyanGarcia/fapi-init",
         },
     },
     {
