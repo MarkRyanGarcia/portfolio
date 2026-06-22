@@ -2,10 +2,10 @@ import TooltipText from "../ui/TooltipText";
 
 export default function AboutBio() {
     return (
-        <div className="flex flex-col gap-4 text-secondary">
+        <div className="flex flex-col gap-4 text-secondary text-xl">
             <p>
-                Hey! I'm <span className="text-tertiary font-bold">Mark Garcia</span>, a Computer Science student at Cal State
-                Fullerton with a minor in Mathematics, graduating in May 2026.
+                Hey! I'm <span className="text-tertiary font-bold">Mark Garcia</span>, a Computer Science graduate from Cal State
+                Fullerton with a minor in Mathematics.
                 I'm a fullstack developer with a focus on backend.
             </p>
 

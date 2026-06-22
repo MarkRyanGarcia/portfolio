@@ -7,7 +7,7 @@ export default function Hero() {
     return (
         <div className="space-y-8">
             <div className="flex flex-col sm:flex-row gap-6 items-start">
-                <div className="flex flex-col sm:w-[50%] space-y-4">
+                <div className="flex flex-col sm:w-[50%] space-y-4 text-lg">
                     <div className="space-y-1">
                         <p className="text-tertiary text-sm font-semibold tracking-widest uppercase">
                             Fullstack Developer | Backend Focused
@@ -16,15 +16,15 @@ export default function Hero() {
                             Mark Garcia
                         </h1>
                     </div>
-                    <p className="text-secondary leading-relaxed">
-                        Software Developer Intern @<a className={linkStyle}
-                            href="https://glenair.com/" target="_blank">Glenair, Inc.</a>
-                        4th year CS student at CSU Fullerton
-                        and President of{" "}
-                        <a className={linkStyle} href="https://acmcsuf.com/" target="_blank">
-                            ACM at CSUF
-                        </a>.
-                    </p>
+                    <div className="flex flex-col space-y-2">
+                        <p className="text-secondary leading-relaxed">
+                            Software Developer @<a className={linkStyle}
+                                href="https://glenair.com/" target="_blank">Glenair, Inc.</a>
+                        </p>
+                        <p className="text-secondary leading-relaxed">
+                            B.S. Computer Science · Cal State Fullerton
+                        </p>
+                    </div>
                 </div>
                 <div className="flex sm:w-[50%] justify-center sm:justify-end mx-auto">
                     <img

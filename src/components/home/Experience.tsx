@@ -38,7 +38,7 @@ export default function Experience() {
 
             <div className="flex flex-col w-full space-y-4">
                     {isLoading ? (
-                        <p className="text-secondary text-sm">Fetching from resume...</p>
+                        <p className="text-secondary text-base">Fetching from resume...</p>
                     ) : renderExperience()}
                 </div>
         </div>

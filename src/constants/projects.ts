@@ -2,18 +2,19 @@ import type { Project } from "../lib/types";
 
 export const projects: Project[] = [
     {
-        title: "[W.I.P.] Cohosted: An Event RSVP Site",
+        title: "Cohosted: An Event RSVP Site",
         description:
-            "(In Progress) Events are always better when everybody pitches into the planning. Invite friends and prompt them with questions, polls, or just chat. Deployed with AWS (VPC, S3, Lambda, Cognito, ECR, RDS, IAM)",
+            "Events are always better when everybody pitches into the planning. Invite friends and prompt them with questions, polls, or just chat. Deployed with AWS (API Gateway, ECR, Lambda, RDS, DynamoDB, S3, Cognito, Bedrock)",
         image_path: "/ProjectImages/cohosted.png",
-        featured: false,
+        featured: true,
         tags: ["AWS", "Docker", "CI/CD", "DevOps"],
         links: {
             Github: "https://github.com/elenav24/cpsc465-event-rsvp",
+            Deployment: "https://cohosted.cloud"
         },
     },
     {
-        title: "[W.I.P.] conquian333.com",
+        title: "conquian333.com",
         description:
             "(In Progress) Website for Conquian 333, a Mexican card game app with over 1.1 million downloads. Conquian is a traditional matching card game and one of the oldest rummy-style games in North America.",
         image_path: "/ProjectImages/conquian333.png",
@@ -64,7 +65,7 @@ export const projects: Project[] = [
         description:
             "An AI assistant that helps you understand the home-buying process. Realease provides personalized guidance, answers your questions, and shows you real listings, and provides predictive valuation insights. Submitted for IrvineHacks 2026.",
         image_path: "/ProjectImages/realease.png",
-        featured: true,
+        featured: false,
         tags: ["AI/ML", "Python", "FastAPI", "React", "SQL", "Clerk"],
         links: {
             Github: "https://github.com/MarkRyanGarcia/IrvineHacks26",

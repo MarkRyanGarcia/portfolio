@@ -10,7 +10,7 @@ export default function Contact() {
                 className="flex w-full max-w-lg flex-col gap-6 rounded-xl border border-secondary bg-base-2 p-8 shadow-lg"
             >
                 <h2 className="text-2xl font-bold text-primary">
-                    Contact <span className="text-tertiary">Me</span>
+                    Message <span className="text-tertiary">Me</span>
                 </h2>
 
                 <div className="flex flex-col gap-2">
@@ -27,7 +27,7 @@ export default function Contact() {
                     <label className="text-secondary">How should I contact you?</label>
                     <input
                         name="contact"
-                        placeholder="Email, Discord, LinkedIn, etc."
+                        placeholder="Your email, discord username, etc."
                         required
                         className="rounded-md border border-secondary bg-base px-4 py-2 text-primary placeholder:text-secondary focus:border-tertiary focus:outline-none"
                     />
@@ -45,10 +45,10 @@ export default function Contact() {
                 </div>
 
                 {isError && (
-                    <p className="text-red-400 text-sm">Something went wrong. Please try again.</p>
+                    <p className="text-red-400 text-base">Something went wrong. Please try again.</p>
                 )}
                 {isSuccess && (
-                    <p className="text-green-400 text-sm">Message sent!</p>
+                    <p className="text-green-400 text-base">Message sent!</p>
                 )}
 
                 <button

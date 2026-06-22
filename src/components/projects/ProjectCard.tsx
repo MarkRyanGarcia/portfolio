@@ -17,14 +17,14 @@ export default function ProjectCard({ project, reverse = false }: ProjectCardPro
                 <div className="flex flex-col gap-3 flex-1">
                     <h3 className="text-xl text-primary font-bold">{project.title}</h3>
 
-                    <p className="text-secondary text-sm leading-relaxed">{project.description}</p>
+                    <p className="text-secondary text-base leading-relaxed">{project.description}</p>
 
                     {project.tags && project.tags.length > 0 && (
                         <div className="flex flex-wrap gap-1.5">
                             {project.tags.map((tag) => (
                                 <span
                                     key={tag}
-                                    className="text-tertiary text-xs bg-tertiary/10 border border-tertiary/30 rounded px-2 py-0.5"
+                                    className="text-tertiary text-sm bg-tertiary/10 border border-tertiary/30 rounded px-2 py-0.5"
                                 >
                                     {tag}
                                 </span>
@@ -39,7 +39,7 @@ export default function ProjectCard({ project, reverse = false }: ProjectCardPro
                                     href={project.links.Deployment}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-1.5 text-sm text-secondary hover:text-base hover:bg-tertiary transition-all duration-200 border border-secondary/50 py-1 px-2.5 rounded-md hover:-translate-y-0.5 cursor-pointer"
+                                    className="flex items-center gap-1.5 text-base text-secondary hover:text-base hover:bg-tertiary transition-all duration-200 border border-secondary/50 py-1 px-2.5 rounded-md hover:-translate-y-0.5 cursor-pointer"
                                 >
                                     <MdLanguage size={14} /> Visit Site
                                 </a>
@@ -49,7 +49,7 @@ export default function ProjectCard({ project, reverse = false }: ProjectCardPro
                                     href={project.links.Github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-1.5 text-sm text-secondary hover:text-base hover:bg-tertiary transition-all duration-200 border border-secondary/50 py-1 px-2.5 rounded-md hover:-translate-y-0.5 cursor-pointer"
+                                    className="flex items-center gap-1.5 text-base text-secondary hover:text-base hover:bg-tertiary transition-all duration-200 border border-secondary/50 py-1 px-2.5 rounded-md hover:-translate-y-0.5 cursor-pointer"
                                 >
                                     <FiGithub size={14} /> GitHub
                                 </a>
@@ -59,7 +59,7 @@ export default function ProjectCard({ project, reverse = false }: ProjectCardPro
                                     href={project.links.Devpost}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-1.5 text-sm text-secondary hover:text-base hover:bg-tertiary transition-all duration-200 border border-secondary/50 py-1 px-2.5 rounded-md hover:-translate-y-0.5 cursor-pointer"
+                                    className="flex items-center gap-1.5 text-base text-secondary hover:text-base hover:bg-tertiary transition-all duration-200 border border-secondary/50 py-1 px-2.5 rounded-md hover:-translate-y-0.5 cursor-pointer"
                                 >
                                     <FaLink size={12} /> Devpost
                                 </a>
