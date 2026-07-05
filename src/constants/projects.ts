@@ -14,9 +14,21 @@ export const projects: Project[] = [
         },
     },
     {
+        title: "ACM March Madness",
+        description:
+            "A 5-day coding challenge event hosted by ACM at California State University, Fullerton! Collaborate in teams and put your problem-solving skills to the test to see if you shall become the best!",
+        image_path: "/ProjectImages/march_madness.png",
+        featured: true,
+        tags: ["Python", "FastAPI", "SQL", "Clerk", "React", "TypeScript", "Node.js", "Tanstack"],
+        links: {
+            Github: "https://github.com/MarkRyanGarcia/acm-march-madness-2026",
+            Deployment: "https://madness.markgarcia.dev/",
+        },
+    },
+    {
         title: "conquian333.com",
         description:
-            "(In Progress) Website for Conquian 333, a Mexican card game app with over 1.1 million downloads. Conquian is a traditional matching card game and one of the oldest rummy-style games in North America.",
+            "(Under Development) Website for Conquian 333, a Mexican card game app with over 1.1 million downloads. Conquian is a traditional matching card game and one of the oldest rummy-style games in North America.",
         image_path: "/ProjectImages/conquian333.png",
         featured: false,
         tags: ["React", "TypeScript", "Tailwind CSS"],
@@ -49,18 +61,6 @@ export const projects: Project[] = [
         },
     },
     {
-        title: "ACM March Madness",
-        description:
-            "A 5-day coding challenge event hosted by ACM at California State University, Fullerton! Collaborate in teams and put your problem-solving skills to the test to see if you shall become the best!",
-        image_path: "/ProjectImages/march_madness.png",
-        featured: true,
-        tags: ["Python", "FastAPI", "SQL", "Clerk", "React", "TypeScript", "Node.js", "Tanstack"],
-        links: {
-            Github: "https://github.com/MarkRyanGarcia/acm-march-madness-2026",
-            Deployment: "https://madness.markgarcia.dev/",
-        },
-    },
-    {
         title: "Realease",
         description:
             "An AI assistant that helps you understand the home-buying process. Realease provides personalized guidance, answers your questions, and shows you real listings, and provides predictive valuation insights. Submitted for IrvineHacks 2026.",
@@ -70,6 +70,18 @@ export const projects: Project[] = [
         links: {
             Github: "https://github.com/MarkRyanGarcia/IrvineHacks26",
             Deployment: "https://devpost.com/software/realease",
+        },
+    },
+    {
+        title: "URL Shortener",
+        description:
+            "Simple URL Shortener made to learn how to make an API in Go. Features a React frontend, PostgreSQL database, and a REST API backend.",
+        image_path: "/ProjectImages/url_shortener.png",
+        featured: true,
+        tags: ["Go", "React", "TypeScript", "SQL"],
+        links: {
+            Github: "https://github.com/MarkRyanGarcia/url-shortener",
+            Deployment: "https://url.markg.dev"
         },
     },
     {
