@@ -77,7 +77,7 @@ export const projects: Project[] = [
         description:
             "Simple URL Shortener made to learn how to make an API in Go. Features a React frontend, PostgreSQL database, and a REST API backend.",
         image_path: "/ProjectImages/url_shortener.png",
-        featured: true,
+        featured: false,
         tags: ["Go", "React", "TypeScript", "SQL"],
         links: {
             Github: "https://github.com/MarkRyanGarcia/url-shortener",
